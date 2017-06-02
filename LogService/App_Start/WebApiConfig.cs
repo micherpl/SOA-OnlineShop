@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net.Http.Headers;
 using System.Web.Http;
 
-namespace Gateway
+namespace LogService
 {
     public static class WebApiConfig
     {
@@ -20,7 +19,6 @@ namespace Gateway
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
-            
         }
     }
 }
