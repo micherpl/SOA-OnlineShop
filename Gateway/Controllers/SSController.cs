@@ -7,7 +7,7 @@ using System.Web.Http;
 
 namespace Gateway.Controllers
 {
-    public class SSController : ApiController
+    public class SController : ApiController
     {
         // GET: api/SS
         public IEnumerable<string> Get()

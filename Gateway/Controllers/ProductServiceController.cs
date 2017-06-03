@@ -63,9 +63,40 @@ namespace Gateway.Controllers
             {
                 return "Hasla sie nie zgadzaja";
             }
-            return "true";
+            return "Zakup powiodl sie";
         }
 
+        [HttpGet]
+        [Route("api/Login/{username}/{password}")]
+        public bool Login(string username, string password)
+        {
+            HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(url + "/" + username + "/password");
+            request.Method = "GET";
+            String result = String.Empty;
+            try
+            {
+                using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
+                {
+                    Stream dataStream = response.GetResponseStream();
+                    StreamReader reader = new StreamReader(dataStream);
+                    result = reader.ReadToEnd();
+                    reader.Close();
+                    dataStream.Close();
+                }
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+            if (password.Equals(JsonConvert.DeserializeObject<string>(result)))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
    
 
         // add to header Content-Type: application/json
