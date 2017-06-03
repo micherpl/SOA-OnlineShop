@@ -4,7 +4,8 @@ API:
 GET:   
 kupowanie: http://localhost:50836/api/buying/{id}/{count}/{username}/{password} zwraca: string z komunikatem  
 listowanie wszystkich produktów: http://localhost:50836/api/getAllProducts/ zwraca: liste produktów w jsonie  
-listowanie wszystkich uzytkowników: http://localhost:50836/api/GetAllUsers/ zwraca: liste userow w jsonie
+listowanie wszystkich uzytkowników: http://localhost:50836/api/GetAllUsers/ zwraca: liste userow w jsonie  
+logowanie: http://localhost:50836/api/Login/{username}/{password} zwraca: bool
 
 POST:  
 rejestracja: http://localhost:50836/api/RegisterUser/ header: Content-Type: application/json Body: uzytkownik (json)  
